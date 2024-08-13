@@ -24,7 +24,7 @@ export default function ImageCard({
       className={`after:content group relative block w-full  cursor-zoom-in transition after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight`}
     >
       <CldImage
-        alt="Willian Justen photo"
+        alt="Photo"
         className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
         style={{ transform: 'translate3d(0, 0, 0)' }}
         placeholder="blur"

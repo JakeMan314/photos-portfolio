@@ -77,15 +77,7 @@ const Home: NextPage = ({
   return (
     <>
       <Head>
-        <title>Willian Justen - Photography</title>
-        <meta
-          property="og:image"
-          content="https://og-image-service.willianjusten.com.br/Photos.png"
-        />
-        <meta
-          name="twitter:image"
-          content="https://og-image-service.willianjusten.com.br/Photos.png"
-        />
+        <title>Jacob & Rachel's Wedding</title>
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
@@ -156,9 +148,10 @@ export async function getStaticProps() {
 
   let i = 0
   for (let result of results?.resources) {
+    const folder = result.folder !== undefined ? result.folder : null;
     reducedResults.push({
       id: i,
-      folder: result.folder,
+      folder: folder,
       height: result.height,
       width: result.width,
       aspect_ratio: result.aspect_ratio,
@@ -166,8 +159,8 @@ export async function getStaticProps() {
       format: result.format
     })
 
-    if (!folders.includes(result.folder)) {
-      folders.push(result.folder)
+    if (folder && !folders.includes(folder)) {
+      folders.push(folder)
     }
 
     i++

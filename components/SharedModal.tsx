@@ -86,7 +86,7 @@ export default function SharedModal({
                   height={currentImage.height > currentImage.width ? 1280 : 853}
                   format="webp"
                   priority
-                  alt="Willian Justen - Photo"
+                  alt="Photo"
                 />
               </motion.div>
             </AnimatePresence>

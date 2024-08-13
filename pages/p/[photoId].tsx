@@ -16,9 +16,9 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   return (
     <>
       <Head>
-        <title>Willian Justen - Photography</title>
+        <title>Jacob & Rachel's Wedding</title>
       </Head>
-      <CldOgImage src={currentPhoto.public_id} alt="Willian Justen - Photo" />
+      <CldOgImage src={currentPhoto.public_id} alt="Photo" />
 
       <main className="mx-auto max-w-[1960px] p-4">
         <Carousel currentPhoto={currentPhoto} index={index} />
@@ -60,13 +60,13 @@ export const getStaticProps: GetStaticProps = async context => {
 
 export async function getStaticPaths() {
   const results = await cloudinary.v2.search
-    .sort_by('folder', 'desc')
+    //.sort_by('folder', 'desc')
     .max_results(2000)
     .execute()
 
   if (results?.next_cursor) {
     const moreResults = await cloudinary.v2.search
-      .sort_by('folder', 'desc')
+     //.sort_by('folder', 'desc')
       .next_cursor(results?.next_cursor)
       .max_results(2000)
       .execute()
